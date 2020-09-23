@@ -29,6 +29,7 @@ const useSupercluster = <
 
   useDeepCompareEffectNoCheck(() => {
     if (!superclusterRef.current || !dequal(pointsRef.current, points)) {
+      console.log('Generating new cluster', pointsRef.current, points);
       superclusterRef.current = new Supercluster(options);
       superclusterRef.current.load(points);
     }
